@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content= "width=device-width, initial-scale=1">
+  <title>Movie Trailer site </title>
+  <!--Höfundur: Unnar Þór Bachmann -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css"></link>
+  <!--<script src="js/bootstrap.min.js" async></script>-->
+  <script src="js/jquery.min.js"></script>
+
+  <style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .thumbnail {
+    padding: 1%;
+  }
+  .nav-tabs {
+    padding: 2%;
+  }
+  .hidden {
+    display: hide;
+  }
+  h1, h2 {
+    padding: 1%;
+  }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>Movie Trailer Website <small>Unnar Þór Bachmann</small></h1>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active" id="all"><a href="#">All</a></li>
+      <li role="presentation" id="action"><a href="#">Action</a></li>
+      <li role="presentation" id="comedy"><a href="#">Comedy</a></li>
+      <li role="presentation" id="drama"><a href="#">Drama</a></li>
+      <li role="presentation" id="cartoon"><a href="#">Cartoon</a></li>
+      <li role="presentation" id="icelandic"><a href="#">Icelandic</a></li>
+
+    </ul>
+  </div>
+  <div class="container-fluid" id="actionList">
+  </div>
+  <div class="container-fluid" id="comedyList">
+  </div>
+  <div class="container-fluid" id="dramaList">
+  </div>
+  <div class="container-fluid" id="cartoonList">
+    <div class="thumbnail">
+      <img src="http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg" alt="Toy story">
+      <div class="caption">
+        <h3>Toy Story</h3>
+        <p>A story of a boy and his toys that come to life</p>
+      </div>
+    </div>
+    <div class="thumbnail">
+      <img src="http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg" alt="Toy story">
+      <div class="caption">
+        <h3>Toy Story</h3>
+        <p>A story of a boy and his toys that come to life</p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="homeList">
+    <h2>
+      About
+    </h2>
+    <p>
+      This is a website designed by Unnar Thor Bachmann.
+    </p>
+  </div>
+  <div class="container" id="icelandicList">
+  </div>
+  <script>
+    var bar = $('li');
+    console.log(bar[0].id);
+    for (var i = 0; i < bar.length; i++) {
+      document.getElementById(bar[i].id).addEventListener('click', function(t) {
+        return function() {
+          $('.active').removeClass('active');
+          bar[t].className = 'active';
+          console.log(bar[t]);
+          var containers = $('.container');
+          for (var j = 0; j < containers.length; j++) {
+            containers[j].className = 'container hidden';
+          }
+          var searchStr = '#' + bar[t].id + 'List';
+          $(searchStr).removeClass('hidden');
+        }
+      }(i));
+    }
+  </script>
+</body>
+</html>

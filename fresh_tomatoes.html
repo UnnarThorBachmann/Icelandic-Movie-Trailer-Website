@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Icelandic Movies</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+       .thumbnail {
+         padding: 1%;
+         width: 33.3%;
+       }
+       .nav-tabs {
+         padding: 2%;
+       }
+       .hidden {
+         display: hide;
+       }
+       h1, h2 {
+         padding: 1%;
+       }
+       img {
+         height: 70%;
+         width: 90%;
+       }
+       .container {
+         display: flex;
+         flex-wrap: wrap;
+         flow-direction: row;
+       }
+       .page-header {
+         padding: 3%;
+       }
+       @media screen and (max-width: 800px) {
+        .thumbnail {
+          width: 50%;
+        }
+       }
+       @media screen and (max-width: 400px) {
+        .thumbnail {
+          width: 100%;
+        }
+       }
+    </style>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="page-header">
+    <h1>The Icelandic Movie Trailer Website <small>Unnar Thor Bachmann</small></h1>
+    <p>This is my solution to the first assignment in Udacity's Full Stack Developers Nanodegree Program. The code was written in the class Programming Foundations for Python
+       but modified and enhanced by me. This page contains 56 Icelandic movies, their user rating on <a href="http://www.imdb.com/">IMDB</a>, the plot from <a href="http://www.imdb.com/">IMDB</a>, name of their director,
+       and link to their Youtube trailer which opens inside a modal. Part of the code is from class. I added <a href="http://getbootstrap.com/">Bootstrap</a>,
+       <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox</a> and <a href="https://www.python.org/">python</a>code to allow filtering of the set. Many pictures were take from <a href="http://www.kvikmyndavefurinn.is/">kvikmyndavefurinn</a>
+       as well as <a href="http://www.imdb.com/">IMDB</a>.
+    </p>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active h" id="all"><a href="#">All</a></li>
+      <li role="presentation" id="action" class="h"><a href="#">Action</a></li>
+      <li role="presentation" id="adventure" class="h"><a href="#">Adventure</a></li>
+      <li role="presentation" id="biography" class="h"><a href="#">Biography</a></li>
+      <li role="presentation" id="cartoon" class="h"><a href="#">Cartoon</a></li>
+      <li role="presentation" id="comedy" class = "h"><a href="#">Comedy</a></li>
+      <li role="presentation" id="crime" class="h"><a href="#">Crime</a></li>
+      <li role="presentation" id="documentary" class="h"><a href="#">Documentary</a></li>
+      <li role="presentation" id="drama" class="h"><a href="#">Drama</a></li>
+      <li role="presentation" id="family" class="h"><a href="#">Family</a></li>
+      <li role="presentation" id="fantasy" class="h"><a href="#">Fantasy</a></li>
+      <li role="presentation" id="history" class="h"><a href="#">History</a></li>
+      <li role="presentation" id="horror" class="h"><a href="#">Horror</a></li>
+      <li role="presentation" id="new" class="h"><a href="#">New</a></li>
+      <li role="presentation" id="romance" class="h"><a href="#">Romance</a></li>
+      <li role="presentation" id="sport" class="h"><a href="#">Sport</a></li>
+      <li role="presentation" id="thriller" class="h"><a href="#">Thriller</a></li>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Release year <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" id="releases">
+          <li>
+                         <a href="#" class="hyear" id="1981">1981</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1982">1982</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1984">1984</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1986">1986</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1987">1987</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1988">1988</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1991">1991</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1992">1992</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1993">1993</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1995">1995</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="1996">1996</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2000">2000</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2001">2001</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2002">2002</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2003">2003</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2004">2004</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2005">2005</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2006">2006</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2007">2007</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2008">2008</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2009">2009</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2010">2010</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2011">2011</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2012">2012</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2013">2013</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2014">2014</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2015">2015</a>
+                        </li><li>
+                         <a href="#" class="hyear" id="2016">2016</a>
+                        </li>
+        </ul>
+      </li>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Directors <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" id="releases">
+          <li>
+                             <a href="#" class="hdirector" id="agust_gudmundsson">Agust Gudmundsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="anton_sigurdsson">Anton Sigurdsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="arni_asgeirsson">Arni Asgeirsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="asgrimur_sverrisson">Asgrimur Sverrisson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="baldvin_zophaniasson">Baldvin Zophaniasson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="baltasar_kormakur">Baltasar Kormakur</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="benedikt_erlingsson">Benedikt Erlingsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="bjorn_hlynur_haraldsson">Bjorn Hlynur Haraldsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="dagur_kari">Dagur Kari</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="david_oskar_olafsson">David Oskar Olafsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="egill_edvarsson">Egill Edvarsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="fridrik_thor_fridriksson">Fridrik Thor Fridriksson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="grimur_hakonarson">Grimur Hakonarson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="gunnar_gudmundsson">Gunnar Gudmundsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="hafsteinn_gunnar_sigurdsson">Hafsteinn Gunnar Sigurdsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="hilmar_oddsson">Hilmar Oddsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="hrafn_gunnlaugsson">Hrafn Gunnlaugsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="marteinn_thorsson">Marteinn Thorsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="olaf_johannesson">Olaf Johannesson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="oskar_jonasson">Oskar Jonasson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="oskar_thor_axelsson">Oskar Thor Axelsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="ragnar_bragaon">Ragnar Bragaon</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="ragnar_bragason">Ragnar Bragason</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="reynir_lyngdal">Reynir Lyngdal</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="robert_douglas">Robert Douglas</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="runar_runarsson">Runar Runarsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="sigurdur_anton">Sigurdur Anton</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="thorhildur_thorleifsdottir">Thorhildur Thorleifsdottir</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="thoromar_jonsson">Thoromar Jonsson</a>
+                            </li><li>
+                             <a href="#" class="hdirector" id="valdis_oskarsdottir">Valdis Oskarsdottir</a>
+                            </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+     <div class="hidden thumbnail movie-tile text-center comedy new 2016 oskar_jonasson" data-trailer-youtube-id="vJceaFUOUGM" data-toggle="modal" data-target="#trailer">
+                          <img src="images/framan.jpg" alt="Fyrir framan annad folk" height>
+                          <div class="caption">
+                            <h3>Fyrir framan annad folk (2016)</h3>
+                            <p>Hubert is an introvert that works in advertising who meets a girl whom he starts dating and like any relationship it has its ups and downs.</p>
+                            <h4>User Ratings (IMDB): 8.2</h4>
+                            <h4>Director: Oskar Jonasson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy new 2015 sigurdur_anton" data-trailer-youtube-id="U5iH86HrvuU" data-toggle="modal" data-target="#trailer">
+                          <img src="images/webcam.jpg" alt="Webcam" height>
+                          <div class="caption">
+                            <h3>Webcam (2015)</h3>
+                            <p>A college student begins working as a cam girl, with support from her best friend.</p>
+                            <h4>User Ratings (IMDB): 8.0</h4>
+                            <h4>Director: Sigurdur Anton</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy crime 1992 oskar_jonasson" data-trailer-youtube-id="Wv3iZOELBzQ" data-toggle="modal" data-target="#trailer">
+                          <img src="images/remote.jpg" alt="Remote Control" height>
+                          <div class="caption">
+                            <h3>Remote Control (1992)</h3>
+                            <p>Since his mother wants to watch TV, Axel, a young auto-mechanic, must recover her remote control, accidentally taken by his punk sister Maja. During his quest, he becomes involved in the ...</p>
+                            <h4>User Ratings (IMDB): 7.9</h4>
+                            <h4>Director: Oskar Jonasson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center biography drama fridrik_thor_fridriksson" data-trailer-youtube-id="vM0dpaNoBkI" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/5/57/Angelsoftheuniverse.jpg" alt="Angels of the Universe" height>
+                          <div class="caption">
+                            <h3>Angels of the Universe (2000)</h3>
+                            <p>Pall is an artistic and sensitive young man. Getting dumped by his girlfriend, Dagny, triggers his descent into madness. We follow him on his way to inevitable doom; at home with his ...</p>
+                            <h4>User Ratings (IMDB): 7.8</h4>
+                            <h4>Director: Fridrik Thor Fridriksson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 1991 fridrik_thor_fridriksson" data-trailer-youtube-id="ZbJP8NDaqFU" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/7/78/ChildrenOfNature1991Poster.jpg" alt="Children of the Nature" height>
+                          <div class="caption">
+                            <h3>Children of the Nature (1991)</h3>
+                            <p>Old Thorgeir must leave his home far off in the Icelandic countryside and move into a home for senior citizens in Reykjavik. There he meets an old friend from his childhood, Stella...</p>
+                            <h4>User Ratings (IMDB): 7.7</h4>
+                            <h4>Director: Fridrik Thor Fridriksson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2014 baldvin_zophaniasson" data-trailer-youtube-id="OIUHDDF4TTM" data-toggle="modal" data-target="#trailer">
+                          <img src="images/fishbowl.jpg" alt="Live in a Fishbowl" height>
+                          <div class="caption">
+                            <h3>Live in a Fishbowl (2014)</h3>
+                            <p>Three tales of three people who have a lasting effect on one another. A young writer whose career is skyrocketing finds himself in a stormy marriage. He divorces his wife after the death of... </p>
+                            <h4>User Ratings (IMDB): 7.6</h4>
+                            <h4>Director: Baldvin Zophaniasson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2006 ragnar_bragason" data-trailer-youtube-id="kMSjNHyZEqQ" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/is/a/ab/Born_veggspjald.jpg" alt="Children" height>
+                          <div class="caption">
+                            <h3>Children (2006)</h3>
+                            <p>Karitas is a single mother of four who desperately tries to make ends meet. Fighting a losing battle with her ex-husband for custody over her three daughters, she's oblivious to what's ...</p>
+                            <h4>User Ratings (IMDB): 7.6</h4>
+                            <h4>Director: Ragnar Bragaon</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy new 2016 asgrimur_sverrisson" data-trailer-youtube-id="IS2YernjGwQ" data-toggle="modal" data-target="#trailer">
+                          <img src="images/reykjavik.jpg" alt="Reykjavik" height>
+                          <div class="caption">
+                            <h3>Reykjavik (2016)</h3>
+                            <p>A bittersweet romantic drama about a thirty-something Reykjavik couple heading in different directions.</p>
+                            <h4>User Ratings (IMDB): 7.5</h4>
+                            <h4>Director: Asgrimur Sverrisson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy new 2015 dagur_kari" data-trailer-youtube-id="_p3RnC7peUY" data-toggle="modal" data-target="#trailer">
+                          <img src="images/vm.jpg" alt="Virgin Mountain" height>
+                          <div class="caption">
+                            <h3>Virgin Mountain (2015)</h3>
+                            <p>Fusi, a 43 years old man still lives with his mother. His daily life is characterized by one of the monotonous routine. The appearance of vibrant Alma and young Hera will upset his old bachelor habits.</p>
+                            <h4>User Ratings (IMDB): 7.5</h4>
+                            <h4>Director: Dagur Kari</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama new 2015 grimur_hakonarson" data-trailer-youtube-id="SWOFWaltGRw" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Rams_2015_film_poster.jpg" alt="Rams" height>
+                          <div class="caption">
+                            <h3>Rams (2015)</h3>
+                            <p>In a remote Icelandic farming valley, two brothers who haven't spoken in 40 years have to come together in order to save what's dearest to them - their sheep.</p>
+                            <h4>User Ratings (IMDB): 7.4</h4>
+                            <h4>Director: Grimur Hakonarson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2003 dagur_kari" data-trailer-youtube-id="cQJck3mCcFE" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/4/49/Noialbinoi.jpg" alt="Noi albinoi" height>
+                          <div class="caption">
+                            <h3>Noi albinoi (2003)</h3>
+                            <p>Is he the village idiot or a genius in disguise? 17 year old Noi drifts through life on a remote fjord in the north of Iceland. In winter, the fjord is cut off from the outside world, ...</p>
+                            <h4>User Ratings (IMDB): 7.4</h4>
+                            <h4>Director: Dagur Kari</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy 1982 agust_gudmundsson" data-trailer-youtube-id="Vq97gSFRUvo" data-toggle="modal" data-target="#trailer">
+                          <img src="http://www.kvikmyndavefurinn.is/axmedia/poster/med_allt_a_hreinu.jpg" alt="On Top" height>
+                          <div class="caption">
+                            <h3>On Top (1982)</h3>
+                            <p>The basic plot revolves around the break-up of a band and the subsequent competition between the two new bands to get contracts and attention. One of the new bands is all-female, the other all-male.</p>
+                            <h4>User Ratings (IMDB): 7.4</h4>
+                            <h4>Director: Agust Gudmundsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy 2009 ragnar_bragason" data-trailer-youtube-id="fL7f_qzIdoA" data-toggle="modal" data-target="#trailer">
+                          <img src="images/bjarnfredarson.jpg" alt="Mr. Bjarnfredarson" height>
+                          <div class="caption">
+                            <h3>Mr. Bjarnfredarson (2009)</h3>
+                            <p>Georg tries to get his life back on track after a five year stint in jail.</p>
+                            <h4>User Ratings (IMDB): 7.3</h4>
+                            <h4>Director: Ragnar Bragason</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy 1996 fridrik_thor_fridriksson" data-trailer-youtube-id="Md0usC4Ww68" data-toggle="modal" data-target="#trailer">
+                          <img src="images/devil.jpg" alt="Devil's Island" height>
+                          <div class="caption">
+                            <h3>Devil's Island (1996)</h3>
+                            <p>The story of families living in barracks, left by the US Army in Reykjavik at the conclusion of World War II.</p>
+                            <h4>User Ratings (IMDB): 7.3</h4>
+                            <h4>Director: Fridrik Thor Fridriksson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center documentary 1982 fridrik_thor_fridriksson" data-trailer-youtube-id="Bi_G3wXdwV4" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Rokk_%C3%AD_Reykjav%C3%ADk_%28VHS_front_cover%29.jpg" alt="Rock in Reykjavik" height>
+                          <div class="caption">
+                            <h3>Rock in Reykjavik (1982)</h3>
+                            <p>Rock in Reykjavik gives a thorough overview of the powerful and expanding rock scene in Iceland. Most of the film consists of performances by a wide variety of ...</p>
+                            <h4>User Ratings (IMDB): 7.3</h4>
+                            <h4>Director: Fridrik Thor Fridriksson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2011 runar_runarsson" data-trailer-youtube-id="wZ5MqJwP6AQ" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/a/a3/Volcano_%282011_film%29.jpg" alt="The Volcano" height>
+                          <div class="caption">
+                            <h3>The Volcano (2011)</h3>
+                            <p>Hannes is an old man who has grown apart from his children. Recently retired when his wife gets ill he tries to reconcile with them and to atone for his cold demeanor in the past.</p>
+                            <h4>User Ratings (IMDB): 7.2</h4>
+                            <h4>Director: Runar Runarsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy family 1986 thorhildur_thorleifsdottir" data-trailer-youtube-id="-LJggfEDbBw" data-toggle="modal" data-target="#trailer">
+                          <img src="images/stella.jpg" alt="Stella on Holiday" height>
+                          <div class="caption">
+                            <h3>Stella on Holiday (1986)</h3>
+                            <p>When a husband get's bad hurt on hands and other parts of the body his wife Stella is forced to go for him to catch salmon near a cottage with a friend who is Swedish so the husband doesn't...</p>
+                            <h4>User Ratings (IMDB): 7.2</h4>
+                            <h4>Director: Thorhildur Thorleifsdottir</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2013 ragnar_bragason" data-trailer-youtube-id="dyxhcNsjWKI" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Metalhead_film_poster.jpg" alt="Metalhead" height>
+                          <div class="caption">
+                            <h3>Metalhead (2013)</h3>
+                            <p>A girl is caught between the life that took her brother and her own inability to strike out on her own. In her grief, she finds solace in the dark music of Black Metal and dreams of becoming a rock star.</p>
+                            <h4>User Ratings (IMDB): 7.1</h4>
+                            <h4>Director: Ragnar Bragason</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy sport 2000 robert_douglas" data-trailer-youtube-id="D1HGyYDp0uk" data-toggle="modal" data-target="#trailer">
+                          <img src="images/icelandic_dream.jpg" alt="The Icelandic Dream" height>
+                          <div class="caption">
+                            <h3>The Icelandic Dream (2000)</h3>
+                            <p>A business man and weekend dad is getting worn down by family trouble, business failure and the continuous loss of his favourite football team.</p>
+                            <h4>User Ratings (IMDB): 7.1</h4>
+                            <h4>Director: Robert Douglas</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy new 2015 david_oskar_olafsson" data-trailer-youtube-id="0E553nTriug" data-toggle="modal" data-target="#trailer">
+                          <img src="images/reverse.jpg" alt="Reverse" height>
+                          <div class="caption">
+                            <h3>Reverse (2015)</h3>
+                            <p>Two childhood friends decide to drive around Iceland in reverse. Soon after their trip starts they find out that this was perhaps not the best idea in the world. Nothing goes as planned and almost everything goes wrong.</p>
+                            <h4>User Ratings (IMDB): 7.0</h4>
+                            <h4>Director: David Oskar Olafsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama thriller crime 2006 baltasar_kormakur" data-trailer-youtube-id="zXkEkOXc-tI" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Myrin_ver2.jpg/450px-Myrin_ver2.jpg" alt="Jar City" height>
+                          <div class="caption">
+                            <h3>Jar City (2006)</h3>
+                            <p>A murder opens up a bleak trail of long buried secrets and small town corruption for a worn out police detective and his squad.</p>
+                            <h4>User Ratings (IMDB): 7.0</h4>
+                            <h4>Director: Baltasar Kormakur</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy 2002 baltasar_kormakur" data-trailer-youtube-id="FzHJso5aaco" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/4/47/TheSea2002.jpg" alt="The Sea" height>
+                          <div class="caption">
+                            <h3>The Sea (2002)</h3>
+                            <p>A rich father in a fisher village plans to take on the project of writing his life story. But first he has to take on his own family, and everybody wants something...</p>
+                            <h4>User Ratings (IMDB): 7.0</h4>
+                            <h4>Director: Baltasar Kormakur</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy romance 2013 benedikt_erlingsson" data-trailer-youtube-id="2gfJc__dbpQ" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Of_Horses_and_Men.jpg" alt="Of Horses and Men" height>
+                          <div class="caption">
+                            <h3>Of Horses and Men (2013)</h3>
+                            <p>A country romance about the human streak in the horse and the horse in the human. Love and death become interlaced and with immense consequences. The fortunes of the people in the country through the horses perception.</p>
+                            <h4>User Ratings (IMDB): 6.9</h4>
+                            <h4>Director: Benedikt Erlingsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2010 baldvin_zophaniasson" data-trailer-youtube-id="VRpyJEIE9gU" data-toggle="modal" data-target="#trailer">
+                          <img src="images/jitters.jpg" alt="Jitters" height>
+                          <div class="caption">
+                            <h3>Jitters (2010)</h3>
+                            <p>A 16-year old Icelandic boy's first kiss with another boy gives him 'jitters'--feelings he can't deny. This is a well-written film that captures the confusion and excitement of being a ...</p>
+                            <h4>User Ratings (IMDB): 6.9</h4>
+                            <h4>Director: Baldvin Zophaniasson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy drama 2001 agust_gudmundsson" data-trailer-youtube-id="qKTlApN6UIU" data-toggle="modal" data-target="#trailer">
+                          <img src="images/mavahlatur.jpg" alt="The Seagull's Laughter" height>
+                          <div class="caption">
+                            <h3>The Seagull's Laughter (2001)</h3>
+                            <p>Post-war provincial Iceland: around 1950, Freyja, who'd been a plump teen, returns from America, a widow with a 20-inch waist...</p>
+                            <h4>User Ratings (IMDB): 6.9</h4>
+                            <h4>Director: Agust Gudmundsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center romance comedy 2000 baltasar_kormakur" data-trailer-youtube-id="k6T0snTFmsg" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/101reykjavik.jpg" alt="101 Reykjavik" height>
+                          <div class="caption">
+                            <h3>101 Reykjavik (2000)</h3>
+                            <p>Thirty-year-old Hlynur still lives with his mother and spends his days drinking, watching porn and surfing the net while living off unemployment checks. A girl is interested in him, but he ...</p>
+                            <h4>User Ratings (IMDB): 6.9</h4>
+                            <h4>Director: Baltasar Kormakur</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama history romance 1995 egill_edvardsson" data-trailer-youtube-id="PEQu5OxKWAc" data-toggle="modal" data-target="#trailer">
+                          <img src="http://www.kvikmyndavefurinn.is/axmedia/poster/agnes_poster.jpg" alt="Agnes" height>
+                          <div class="caption">
+                            <h3>Agnes (1995)</h3>
+                            <p>Agnes, the beautiful housekeeper of the sheriff of a small Icelandic county sees a chance to get herself and her young daughter away from her brutal employer when she falls in love with the...</p>
+                            <h4>User Ratings (IMDB): 6.9</h4>
+                            <h4>Director: Egill Edvarsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center thriller crime 2012 oskar_thor_axelsson" data-trailer-youtube-id="xceTbo_e4yM" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/is/b/bd/Svarturaleikplakat.jpg" alt="Black's Game" height>
+                          <div class="caption">
+                            <h3>Black's Game (2012)</h3>
+                            <p>After being reacquainted with a childhood friend Stebbi joins the drug trade world in order to pay off his debt. Inspired by actual events.</p>
+                            <h4>User Ratings (IMDB): 6.8</h4>
+                            <h4>Director: Oskar Thor Axelsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center thriller 2008 oskar_jonasson" data-trailer-youtube-id="30CxmO-wKCw" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Reykjavik-Rotterdam.jpg" alt="Reykjavik-Rotterdam" height>
+                          <div class="caption">
+                            <h3>Reykjavik-Rotterdam (2008)</h3>
+                            <p>Financial concerns tempt a security guard to return to his smuggling ways.</p>
+                            <h4>User Ratings (IMDB): 6.8</h4>
+                            <h4>Director: Oskar Jonasson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center action drama 1984 hrafn-gunnlaugsson" data-trailer-youtube-id="3O8NRuiuTHI" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Hrafninn_flygur_poster.jpg/374px-Hrafninn_flygur_poster.jpg" alt="When Raven Flies" height>
+                          <div class="caption">
+                            <h3>When Raven Flies (1984)</h3>
+                            <p>Vikings pillage the land, seeking silver and slaves, slaying men and women in the process. A young boy is spared when a Viking takes pity on him instead of killing him. Iceland 20</p>
+                            <h4>User Ratings (IMDB): 6.8</h4>
+                            <h4>Director: Hrafn Gunnlaugsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2015 bjorn_hlynur_haraldsson" data-trailer-youtube-id="hyP-j9zoF0k" data-toggle="modal" data-target="#trailer">
+                          <img src="images/blodberg.jpg" alt="The Homecoming" height>
+                          <div class="caption">
+                            <h3>The Homecoming (2015)</h3>
+                            <p>Gunnar is a sociologist in his fifties who has written countless self-help books. He lives in a beautiful house that is way too big for him and Dísa, his wife of thirty years. Their ...</p>
+                            <h4>User Ratings (IMDB): 6.7</h4>
+                            <h4>Director: Bjorn Hlynur Haraldsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center action drama baltasar_kormakur" data-trailer-youtube-id="FfDP44g__Q0" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/e/e7/The_Deep_poster.jpg" alt="The Deep" height>
+                          <div class="caption">
+                            <h3>The Deep (2012)</h3>
+                            <p>Based on actual events, a fisherman tries to survive in the freezing ocean after his boat capsizes off the south coast of Iceland.</p>
+                            <h4>User Ratings (IMDB): 6.7</h4>
+                            <h4>Director: Baltasar Kormakur</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy drama fantasy romance 2011 marteinn_thorsson" data-trailer-youtube-id="SrUvpFoMXrg" data-toggle="modal" data-target="#trailer">
+                          <img src="images/rokland.jpg" alt="Stormland" height>
+                          <div class="caption">
+                            <h3>Stormland (2011)</h3>
+                            <p>The tragicomic story of lone rebel Boddi Steingrimsson who lives in a small town in Northern Iceland. Boddi hates materialistic modern society in its entirety and on his blog-page he ...</p>
+                            <h4>User Ratings (IMDB): 6.7</h4>
+                            <h4>Director: Marteinn Thorsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy drama 2008 baltasar_kormakur" data-trailer-youtube-id="c8wE3TLLjPU" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/is/e/ee/Brudguminn.jpg" alt="Brudguminn" height>
+                          <div class="caption">
+                            <h3>Brudguminn (2008)</h3>
+                            <p>Jon, a middle-aged professor is going to get married tomorrow, for the second time, to one of his ex-students half his age. But it's not all roses. First, there's his cranky ...</p>
+                            <h4>User Ratings (IMDB): 6.7</h4>
+                            <h4>Director: Baltasar Kormakur</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2004 hilmar_oddsson" data-trailer-youtube-id="g0DqUtDbQ5c" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/is/thumb/5/5a/Kaldaljos_VHS.jpg/384px-Kaldaljos_VHS.jpg" alt="Cold Light" height>
+                          <div class="caption">
+                            <h3>Cold Light (2004)</h3>
+                            <p>What could be better than knowing your future? And what could be worse? A love-filled childhood abruptly ends when catastrophe descends. One that the child had foreseen yet failed to act upon.</p>
+                            <h4>User Ratings (IMDB): 6.7</h4>
+                            <h4>Director: Hilmar Oddsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy drama 2000 hafsteinn_gunnar_sigurdsson" data-trailer-youtube-id="tbkiGUbSgDw" data-toggle="modal" data-target="#trailer">
+                          <img src="images/paris.jpg" alt="Paris of the North" height>
+                          <div class="caption">
+                            <h3>Paris of the North (2014)</h3>
+                            <p>Hugi is a teacher in a small and remote village in the east of iceland (population 169). He is quite content by himself among the mountains, which surround the quite village where hardly ...</p>
+                            <h4>User Ratings (IMDB): 6.6</h4>
+                            <h4>Director: Hafsteinn Gunnar Sigurdsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2010 fridrik_thor_fridriksson" data-trailer-youtube-id="316HhqFJe_E" data-toggle="modal" data-target="#trailer">
+                          <img src="images/gogo.jpg" alt="Mamma Goggo" height>
+                          <div class="caption">
+                            <h3>Mamma Goggo (2010)</h3>
+                            <p>A film director's personal journey experiencing his mother's disappearance into the Alzheimer disease, a film with essential Fridriksson's ingredients, humour, compassion and strong visual style.</p>
+                            <h4>User Ratings (IMDB): 6.6</h4>
+                            <h4>Director: Fridrik Thor Fridriksson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy 2008 valdis_oskarsdottir" data-trailer-youtube-id="62Ub6p6uUho" data-toggle="modal" data-target="#trailer">
+                          <img src="images/country.jpg" alt="Country Wedding" height>
+                          <div class="caption">
+                            <h3>Country Wedding (2008)</h3>
+                            <p>A couple decide to get married in a church out in the country. It is 1 hour drive from Reykjavik but things do not go as planed.</p>
+                            <h4>User Ratings (IMDB): 6.5</h4>
+                            <h4>Director: Valdis Oskarsdottir</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy fantasy 2007 gunnar_gudmundsson" data-trailer-youtube-id="g6K3ykcRzKE" data-toggle="modal" data-target="#trailer">
+                          <img src="images/dorks.jpg" alt="Dorks and Damsels" height>
+                          <div class="caption">
+                            <h3>Dorks and Damsels (2007)</h3>
+                            <p>When Hildur - a beautiful high society girl and a regular guest in the national celebrity press - finds out that her boyfriend Jolli is about to go into jail, she realizes she has to learn ...</p>
+                            <h4>User Ratings (IMDB): 6.5</h4>
+                            <h4>Director: Gunnar Gudmundsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center action 1981 agust_gudmundsson" data-trailer-youtube-id="dqpX0y51fNs" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Utlaginn01.jpg" alt="Outlaw" height>
+                          <div class="caption">
+                            <h3>Outlaw (1981)</h3>
+                            <p>From an authentic Viking saga, Outlaw tells the story of a family blood feud, set in 10th century Iceland.</p>
+                            <h4>User Ratings (IMDB): 6.5</h4>
+                            <h4>Director: Agust Gudmundsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comed fantasy 2010 grimur_hakonarson" data-trailer-youtube-id="62jfqf5H87I" data-toggle="modal" data-target="#trailer">
+                          <img src="images/summer.jpg" alt="Summerland" height>
+                          <div class="caption">
+                            <h3>Summerland (2010)</h3>
+                            <p>An art-house comedy about an ordinary family running the unusual business of elf tourism and spiritual sessions. Their house is built around an elf stone, which is sacred to the wife Lara, ... </p>
+                            <h4>User Ratings (IMDB): 6.4</h4>
+                            <h4>Director: Grimur Hakonarson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2010 arni_asgeirsson" data-trailer-youtube-id="uTPRRzRfTHs" data-toggle="modal" data-target="#trailer">
+                          <img src="images/brim.jpg" alt="Undercurrent" height>
+                          <div class="caption">
+                            <h3>Undercurrent (2010)</h3>
+                            <p>The crew on board the fishing vessel Undercurrent RE 29 has become uncomfortably numb with its never ending routine of week long tours at sea. Then, during one dark and dreary night this ... </p>
+                            <h4>User Ratings (IMDB): 6.4</h4>
+                            <h4>Director: Arni Asgeirsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 1988 hrafn_gunnlaugsson" data-trailer-youtube-id="0E553nTriug" data-toggle="modal" data-target="#trailer">
+                          <img src="images/shadow.jpg" alt="Shadow of the Raven" height>
+                          <div class="caption">
+                            <h3>Shadow of the Raven (1988)</h3>
+                            <p>Trausti returns to Iceland just in time to be entangled in a family feud over a stranded whale-cadaver. His mother (the family head) is mortally wounded and Grim kills Erikur; the other ...</p>
+                            <h4>User Ratings (IMDB): 6.4</h4>
+                            <h4>Director: Hrafn Gunnlaugsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center action 2014 olaf_johannesson" data-trailer-youtube-id="0JpmZM2fi3w" data-toggle="modal" data-target="#trailer">
+                          <img src="images/brave.jpg" alt="Brave Men's Blood" height>
+                          <div class="caption">
+                            <h3>Brave Men's Blood (2014)</h3>
+                            <p>In order to take down a major criminal organization, the ambitious head of the internal affairs unit of the Reykjavik P.D. decides to investigate a corrupt police lieutenant. Tipped off ...</p>
+                            <h4>User Ratings (IMDB): 6.3</h4>
+                            <h4>Director: Olaf Johannesson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2013 thoromar_jonsson" data-trailer-youtube-id="FR87GCI04RY" data-toggle="modal" data-target="#trailer">
+                          <img src="images/falskur.jpg" alt="Falskur Fugl" height>
+                          <div class="caption">
+                            <h3>Falskur Fugl (2013)</h3>
+                            <p>Arnaldur, a 16-year-old boy living a normal teenager's life in Reykjavik. One day, coming home from school, he finds his brother in the bathtub, dead. Despite clear signs of a suicide, ...</p>
+                            <h4>User Ratings (IMDB): 6.2</h4>
+                            <h4>Director: Thoromar Jonsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center adventure drama 1991 hrafn_gunnlaugsson" data-trailer-youtube-id="yWB8ZP2RmR8" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/is/thumb/d/dd/Hviti_vikingurinn_VHS.jpg/377px-Hviti_vikingurinn_VHS.jpg" alt="The White Viking" height>
+                          <div class="caption">
+                            <h3>The White Viking (1991)</h3>
+                            <p>Norway in the 10th century. Askur, son of the powerful Thorgeir marries Embla, daughter of one of the few remaining landowners in Norway, in a pagan ceremony. King Olav, a ruthless ...</p>
+                            <h4>User Ratings (IMDB): 6.2</h4>
+                            <h4>Director: Hrafn Gunnlaugsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 1987 fridrik_thor_fridriksson" data-trailer-youtube-id="XNbvcEAXNM4" data-toggle="modal" data-target="#trailer">
+                          <img src="images/skytturnar.jpg" alt="Skytturnar" height>
+                          <div class="caption">
+                            <h3>Skytturnar (1987)</h3>
+                            <p>Two friends, who are experienced whale hunters, decide to settle down in Rekyavik at the end of the whaling season. During a night on the town, the duo lands in a heap of trouble after they...</p>
+                            <h4>User Ratings (IMDB): 6.2</h4>
+                            <h4>Director: Fridrik Thor Fridriksson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 1993 hrafn_gunnlaugsson" data-trailer-youtube-id="h2PWnKTAKpY" data-toggle="modal" data-target="#trailer">
+                          <img src="images/hinhelguve.jpg" alt="Hin helgu ve" height>
+                          <div class="caption">
+                            <h3>Hin helgu ve (1993)</h3>
+                            <p>On a small island in the west of Island, Gestur, only seven years old, falls in love with 20 years old Helga. When she introduces him her fiancée one day, he decides to fight the competitor...</p>
+                            <h4>User Ratings (IMDB): 6.1</h4>
+                            <h4>Director: Hrafn Gunnlaugsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 2013 marteinn_thorsson" data-trailer-youtube-id="JvQpg7k7g_M" data-toggle="modal" data-target="#trailer">
+                          <img src="images/xl.jpg" alt="XL" height>
+                          <div class="caption">
+                            <h3>XL (2013)</h3>
+                            <p>Leifur Sigurdarson, an unstoppable ladies man and alcoholic parliament member, is forced in rehab by his friend and boss, the Prime Minister of Iceland. But before he gets spanked in public...</p>
+                            <h4>User Ratings (IMDB): 5.9</h4>
+                            <h4>Director: Marteinn Thorsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center action drama thriller 2011 olaf_johannesson" data-trailer-youtube-id="Nz10eee9rRI" data-toggle="modal" data-target="#trailer">
+                          <img src="https://upload.wikimedia.org/wikipedia/is/thumb/4/44/Borgrikiplakat.jpg/406px-Borgrikiplakat.jpg" alt="City State" height>
+                          <div class="caption">
+                            <h3>City State (2011)</h3>
+                            <p>Set in modern day Iceland, an immigrant vows revenge after losing his unborn child in an attack by a crime syndicate, thereby binding his fate with a troubled policewoman, her corrupt police commander, and a crime lord who's losing his edge.</p>
+                            <h4>User Ratings (IMDB): 5.8</h4>
+                            <h4>Director: Olaf Johannesson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy 2011 olaf_johannesson" data-trailer-youtube-id="S2KrDrANs_M" data-toggle="modal" data-target="#trailer">
+                          <img src="images/polite.jpg" alt="Polite People" height>
+                          <div class="caption">
+                            <h3>Polite People (2011)</h3>
+                            <p>A desperate city-slicker engineer cheats his way into a small farming community, pretending to know how to save them by refinancing their slaughterhouse not knowing that he's walking into a...</p>
+                            <h4>User Ratings (IMDB): 5.8</h4>
+                            <h4>Director: Olaf Johannesson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama comedy 2010 valdis_oskarsdottir" data-trailer-youtube-id="None" data-toggle="modal" data-target="#trailer">
+                          <img src="images/king.jpg" alt="King's Road" height>
+                          <div class="caption">
+                            <h3>King's Road (2010)</h3>
+                            <p>After 3 years abroad Junior returns to Iceland with his set of problems hoping that his father can sort them out but his homecoming isn't quite what he had expected.</p>
+                            <h4>User Ratings (IMDB): 5.8</h4>
+                            <h4>Director: Valdis Oskarsdottir</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama horror history new 2016 anton_sigurdsson" data-trailer-youtube-id="1t3H_QcDBTE" data-toggle="modal" data-target="#trailer">
+                          <img src="images/grafir.jpg" alt="Grafir og Bein" height>
+                          <div class="caption">
+                            <h3>Grafir og Bein (2016)</h3>
+                            <p>Husband and wife, Gunnar and Sonja go to a remote house in the Icelandic country side. Shortly after their arrival strange things start to happen that might jeopardize their marriage as well as their lives.</p>
+                            <h4>User Ratings (IMDB): 5.4</h4>
+                            <h4>Director: Anton Sigurdsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center drama 1991 hrafn_gunnlaugsson" data-trailer-youtube-id="SSO-8E8VQ8Y" data-toggle="modal" data-target="#trailer">
+                          <img src="images/whitchcraft.jpg" alt="Whitchcraft" height>
+                          <div class="caption">
+                            <h3>Whitchcraft (1991)</h3>
+                            <p>The young and fanatical Jon is appointed pastor to a remote church in 17th century Iceland. As is custom, he marries the widow of his predecessor, a woman much older than he is. He is ...</p>
+                            <h4>User Ratings (IMDB): 5.4</h4>
+                            <h4>Director: Hrafn Gunnlaugsson</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center comedy drama romance sport 2005 robert_douglas" data-trailer-youtube-id="INA7nwEe_qY" data-toggle="modal" data-target="#trailer">
+                          <img src="images/eleven.jpg" alt="Eleven men out" height>
+                          <div class="caption">
+                            <h3>Eleven men out (2005)</h3>
+                            <p>The star player of Icelands top football team causes a stir when he admits to being gay to his team mates and then goes on a journey to discover himself (with the help of the local press). ...</p>
+                            <h4>User Ratings (IMDB): 5.1</h4>
+                            <h4>Director: Robert Douglas</h4>
+                          </div>
+                        </div><div class="hidden thumbnail movie-tile text-center action 2012 reynir_lyngdal" data-trailer-youtube-id="i0BYGETCT0Y" data-toggle="modal" data-target="#trailer">
+                          <img src="images/frost.jpg" alt="Frost" height>
+                          <div class="caption">
+                            <h3>Frost (2012)</h3>
+                            <p>A young couple, physiologist Agla and filmmaker Gunnar wake up at a glacier camp to find the camp mysteriously abandoned and their co-workers gone. When searching for the lost team they realize they're up against an unknown deadly force.</p>
+                            <h4>User Ratings (IMDB): 3.7</h4>
+                            <h4>Director: Reynir Lyngdal</h4>
+                          </div>
+                        </div>
+  </div>
+  <nav>
+      <ul class="pager">
+        <li id="prev"><a href="#" >Previous</a></li>
+        <li id="next"><a href="#">Next</a></li>
+      </ul>
+  </nav>
+
+     <script type="text/javascript" charset="utf-8">
+     var items = 'thumbnail';
+     var offset = 0;
+     var year = '';
+     var director = '';
+     /*
+     * A function wich is used to filter the movie tiles displayed.
+     * This function is run whenever the navigation filters are selected.
+     */
+     var filter = function() {
+       var filtered_list = [];
+       var elements = document.getElementsByClassName('thumbnail');
+
+        if (year === '' && director === '') {
+          for (var i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains(items)) {
+              filtered_list.push(elements[i])
+            }
+          }
+        }
+        else if (year === '' && director != '') {
+          for (var i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains(director) && elements[i].classList.contains(items)) {
+              filtered_list.push(elements[i])
+            }
+          }
+        }
+        else if (year != '' && director === '') {
+          for (var i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains(year) && elements[i].classList.contains(items)) {
+              filtered_list.push(elements[i])
+            }
+          }
+        }
+        else {
+          for (var i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains(year) && elements[i].classList.contains(director) && elements[i].classList.contains(items)) {
+              filtered_list.push(elements[i])
+            }
+          }
+        }
+        return filtered_list;
+     };
+     /*
+     * This is a helper function which
+     * is ran when new filtering option is
+     * selected.
+     */
+     var refresh = function() {
+        offset = 0;
+        var filt_items = filter();
+        var allItems = document.getElementsByClassName('thumbnail');
+        for (var j = 0; j < allItems.length; j++) {
+          allItems[j].classList.add('hidden');
+        }
+        for (var j = 0; j < Math.min(6,filt_items.length); j++) {
+          filt_items[j].classList.remove('hidden');
+        }
+        document.getElementById('prev').classList.add('hidden');
+        if (filt_items.length-offset <= 6) {
+           document.getElementById('next').classList.add('hidden');
+        }
+        else {
+           document.getElementById('next').classList.remove('hidden');
+        }
+     };
+     /*
+     * This is an event listener function which allows the user to scroll back
+     * when viewing the movie tiles. Only six tiles are displayed on
+     * screen.
+     */
+     document.getElementById('prev').addEventListener('click', function(e) {
+       var elements = filter();
+       if (offset >= 6) {
+          for (var i = offset; i < offset+6; i++) {
+            if (elements[i] != null) {
+              elements[i].classList.add('hidden');
+            }
+          }
+          offset = offset - 6;
+          for (var i = offset; i < offset+6; i++) {
+            if (elements[i] != null) {
+              elements[i].classList.remove('hidden');
+            }
+          }
+          if (offset === 0) {
+            document.getElementById('prev').classList.add('hidden');
+          }
+          else {
+            document.getElementById('prev').classList.remove('hidden');
+          }
+          if (elements.length-offset > 6) {
+            document.getElementById('next').classList.remove('hidden');
+          }
+          else {
+           document.getElementById('next').classList.add('hidden');
+          }
+         
+       }
+       
+     });
+     /*
+     * This is an event listener function which allows the user to scroll forward
+     * when viewing the movie tiles. Only six tiles are displayed on
+     * screen.
+     */
+     document.getElementById('next').addEventListener('click', function(e) {
+       var elements = filter();
+       if (elements.length-offset > 6) {
+          for (var i = offset; i < offset+6; i++) {
+            if (elements[i] != null) {
+              elements[i].classList.add('hidden');
+            }
+          }
+          offset = offset + 6;
+          for (var i = offset; i < offset+6; i++) {
+            if (elements[i] != null) {
+              elements[i].classList.remove('hidden');
+            }
+          }
+          if (offset === 0) {
+            document.getElementById('prev').classList.add('hidden');
+          }
+          else {
+            document.getElementById('prev').classList.remove('hidden');
+          }
+          if (elements.length-offset > 6) {
+            document.getElementById('next').classList.remove('hidden');
+          }
+          else {
+           document.getElementById('next').classList.add('hidden');
+          }
+         
+       }
+     });
+     /*
+     * Event listener for filtering by years.
+     */
+     var years = $('.hyear');
+     for (var i=0; i < years.length; i++) {
+      document.getElementById(years[i].id).addEventListener('click', function(y) {
+        return function() {
+          year = y;
+          refresh();
+        }
+      }(years[i].id));
+     }
+     /*
+     * Event listener for filtering by directors.
+     */
+     var directors = $('.hdirector');
+     for (var i=0; i < directors.length; i++) {
+      document.getElementById(directors[i].id).addEventListener('click', function(d) {
+        return function() {
+          director = d;
+          refresh();
+        }
+      }(directors[i].id));
+     }
+     /*
+     * Event listener for filtering by movie category.
+     */
+     var bar = $('.h');
+     for (var i = 0; i < bar.length; i++) {
+       document.getElementById(bar[i].id).addEventListener('click', function(t) {
+        return function() {
+
+        if (bar[t].id === 'all') {
+          $('.active').removeClass('active');
+          bar[t].className = 'active';
+          items = 'thumbnail';
+        }
+        else {
+          $('.active').removeClass('active');
+          bar[t].className = 'active';
+          items = bar[t].id;
+        }
+        year = '';
+        director = '';
+        offset = 0;
+        refresh();
+          
+        }
+      }(i));
+    }
+    /*
+    * Javascript written in class.
+    */
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id');
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+          /*
+          * Added by Unnar Thor Bachmann to display first six items when page is loaded.
+          */
+          document.getElementById('prev').classList.add('hidden');
+          var filt_items = filter();
+          for (var i = offset; i < offset + 6; i++) {
+            filt_items[i].classList.remove('hidden');
+          }
+        });
+ 
+    </script>
+  </body>
+</html>
