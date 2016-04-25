@@ -1,0 +1,561 @@
+{
+  "1": {
+       "title": "When Raven Flies",
+       "plot": "Vikings pillage the land, seeking silver and slaves, slaying men and women in the process. A young boy is spared when a Viking takes pity on him instead of killing him. Iceland 20",
+       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Hrafninn_flygur_poster.jpg/374px-Hrafninn_flygur_poster.jpg",
+       "trailer": "https://www.youtube.com/watch?v=3O8NRuiuTHI",
+       "classes": "action drama 1984 hrafn-gunnlaugsson",
+       "rating": 6.8,
+       "release": 1984,
+       "director":"Hrafn Gunnlaugsson"
+      },
+  "2":{
+       "title": "Children of the Nature",
+       "plot": "Old Thorgeir must leave his home far off in the Icelandic countryside and move into a home for senior citizens in Reykjavik. There he meets an old friend from his childhood, Stella...",
+       "image": "https://upload.wikimedia.org/wikipedia/en/7/78/ChildrenOfNature1991Poster.jpg",
+       "trailer": "https://www.youtube.com/watch?v=ZbJP8NDaqFU",
+       "classes": "drama 1991 fridrik_thor_fridriksson",
+       "rating": 7.7,
+       "release": 1991,
+       "director": "Fridrik Thor Fridriksson"
+      },
+  "3":{
+       "title": "Metalhead",
+       "plot": "A girl is caught between the life that took her brother and her own inability to strike out on her own. In her grief, she finds solace in the dark music of Black Metal and dreams of becoming a rock star.",
+       "image": "https://upload.wikimedia.org/wikipedia/en/c/c4/Metalhead_film_poster.jpg",
+       "trailer": "https://www.youtube.com/watch?v=dyxhcNsjWKI",
+       "classes": "drama 2013 ragnar_bragason",
+       "rating": 7.1,
+       "release": 2013,
+       "director": "Ragnar Bragason"
+      },
+  "4":{
+       "title": "Rock in Reykjavik",
+       "plot": "Rock in Reykjavik gives a thorough overview of the powerful and expanding rock scene in Iceland. Most of the film consists of performances by a wide variety of ...",
+       "image": "https://upload.wikimedia.org/wikipedia/en/6/6e/Rokk_%C3%AD_Reykjav%C3%ADk_%28VHS_front_cover%29.jpg",
+       "trailer": "https://www.youtube.com/watch?v=Bi_G3wXdwV4",
+       "classes": "documentary 1982 fridrik_thor_fridriksson",
+       "rating": 7.3,
+       "release": 1982,
+       "director": "Fridrik Thor Fridriksson"
+     },
+  "5":{
+      "title": "Of Horses and Men",
+      "plot": "A country romance about the human streak in the horse and the horse in the human. Love and death become interlaced and with immense consequences. The fortunes of the people in the country through the horses perception.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/f/f2/Of_Horses_and_Men.jpg",
+      "trailer": "https://www.youtube.com/watch?v=2gfJc__dbpQ",
+      "classes": "drama comedy romance 2013 benedikt_erlingsson",
+      "rating": 6.9,
+      "release": 2013,
+      "director": "Benedikt Erlingsson"
+     },
+  "6":{
+      "title":"Outlaw",
+      "plot": "From an authentic Viking saga, Outlaw tells the story of a family blood feud, set in 10th century Iceland.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/b/bc/Utlaginn01.jpg",
+      "trailer": "https://www.youtube.com/watch?v=dqpX0y51fNs",
+      "classes": "action 1981 agust_gudmundsson",
+      "rating": 6.5,
+      "release": 1981,
+      "director": "Agust Gudmundsson"
+     },
+  "7":{
+      "title": "On Top",
+      "plot": "The basic plot revolves around the break-up of a band and the subsequent competition between the two new bands to get contracts and attention. One of the new bands is all-female, the other all-male.",
+      "image": "http://www.kvikmyndavefurinn.is/axmedia/poster/med_allt_a_hreinu.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Vq97gSFRUvo",
+      "classes": "comedy 1982 agust_gudmundsson",
+      "rating": 7.4,
+      "release": 1982,
+      "director": "Agust Gudmundsson"
+     },
+  "8":{
+      "title": "Rams",
+      "plot": "In a remote Icelandic farming valley, two brothers who haven't spoken in 40 years have to come together in order to save what's dearest to them - their sheep.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/a6/Rams_2015_film_poster.jpg",
+      "trailer": "https://www.youtube.com/watch?v=SWOFWaltGRw",
+      "classes": "drama new 2015 grimur_hakonarson",
+      "rating": 7.4,
+      "release": 2015,
+      "director": "Grimur Hakonarson"
+     },
+  "9":{
+      "title": "Virgin Mountain",
+      "plot": "Fusi, a 43 years old man still lives with his mother. His daily life is characterized by one of the monotonous routine. The appearance of vibrant Alma and young Hera will upset his old bachelor habits.",
+      "image": "images/vm.jpg",
+      "trailer": "https://www.youtube.com/watch?v=_p3RnC7peUY",
+      "classes": "comedy new 2015 dagur_kari",
+      "rating": 7.5,
+      "release": 2015,
+      "director": "Dagur Kari"
+     },
+  "10":{
+      "title":"The Deep",
+      "plot": "Based on actual events, a fisherman tries to survive in the freezing ocean after his boat capsizes off the south coast of Iceland.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/e/e7/The_Deep_poster.jpg",
+      "trailer": "https://www.youtube.com/watch?v=FfDP44g__Q0",
+      "classes": "action drama baltasar_kormakur",
+      "rating": 6.7,
+      "release": 2012,
+      "director": "Baltasar Kormakur"
+     },
+  "11":{
+      "title": "101 Reykjavik",
+      "plot": "Thirty-year-old Hlynur still lives with his mother and spends his days drinking, watching porn and surfing the net while living off unemployment checks. A girl is interested in him, but he ...",
+      "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/101reykjavik.jpg",
+      "trailer": "https://www.youtube.com/watch?v=k6T0snTFmsg",
+      "classes": "romance comedy 2000 baltasar_kormakur",
+      "rating": 6.9,
+      "release": 2000,
+      "director": "Baltasar Kormakur"
+     },
+  "12":{
+      "title": "Jitters",
+      "plot": "A 16-year old Icelandic boy's first kiss with another boy gives him 'jitters'--feelings he can't deny. This is a well-written film that captures the confusion and excitement of being a ...",
+      "image": "images/jitters.jpg",
+      "trailer": "https://www.youtube.com/watch?v=VRpyJEIE9gU",
+      "classes": "drama 2010 baldvin_zophaniasson",
+      "rating": 6.9,
+      "release": 2010,
+      "director": "Baldvin Zophaniasson"
+    },
+  "13":{
+      "title": "The Sea",
+      "plot": "A rich father in a fisher village plans to take on the project of writing his life story. But first he has to take on his own family, and everybody wants something...",
+      "image": "https://upload.wikimedia.org/wikipedia/en/4/47/TheSea2002.jpg",
+      "trailer": "https://www.youtube.com/watch?v=FzHJso5aaco",
+      "classes": "drama comedy 2002 baltasar_kormakur",
+      "rating": 7.0,
+      "release": 2002,
+      "director": "Baltasar Kormakur"
+    },
+  "14":{
+      "title": "Noi albinoi",
+      "plot": "Is he the village idiot or a genius in disguise? 17 year old Noi drifts through life on a remote fjord in the north of Iceland. In winter, the fjord is cut off from the outside world, ...",
+      "image": "https://upload.wikimedia.org/wikipedia/en/4/49/Noialbinoi.jpg",
+      "trailer": "https://www.youtube.com/watch?v=cQJck3mCcFE",
+      "classes": "drama 2003 dagur_kari",
+      "rating": 7.4,
+      "release": 2003,
+      "director": "Dagur Kari"
+    },
+  "15":{
+      "title": "Black's Game",
+      "plot": "After being reacquainted with a childhood friend Stebbi joins the drug trade world in order to pay off his debt. Inspired by actual events.",
+      "image": "https://upload.wikimedia.org/wikipedia/is/b/bd/Svarturaleikplakat.jpg",
+      "trailer": "https://www.youtube.com/watch?v=xceTbo_e4yM",
+      "classes": "thriller crime 2012 oskar_thor_axelsson",
+      "rating": 6.8,
+      "release": 2012,
+      "director": "Oskar Thor Axelsson"
+    },
+  "16":{
+      "title": "The Volcano",
+      "plot": "Hannes is an old man who has grown apart from his children. Recently retired when his wife gets ill he tries to reconcile with them and to atone for his cold demeanor in the past.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/a3/Volcano_%282011_film%29.jpg",
+      "trailer": "https://www.youtube.com/watch?v=wZ5MqJwP6AQ",
+      "classes": "drama 2011 runar_runarsson",
+      "rating": 7.2,
+      "release": 2011,
+      "director": "Runar Runarsson"
+    },
+  "17":{
+      "title": "Jar City",
+      "plot": "A murder opens up a bleak trail of long buried secrets and small town corruption for a worn out police detective and his squad.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Myrin_ver2.jpg/450px-Myrin_ver2.jpg",
+      "trailer": "https://www.youtube.com/watch?v=zXkEkOXc-tI",
+      "classes": "drama thriller crime 2006 baltasar_kormakur",
+      "rating": 7.0,
+      "release": 2006,
+      "director": "Baltasar Kormakur"
+    },
+  "18":{
+      "title": "Live in a Fishbowl",
+      "plot": "Three tales of three people who have a lasting effect on one another. A young writer whose career is skyrocketing finds himself in a stormy marriage. He divorces his wife after the death of... ",
+      "image": "images/fishbowl.jpg",
+      "trailer": "https://www.youtube.com/watch?v=OIUHDDF4TTM",
+      "classes": "drama 2014 baldvin_zophaniasson",
+      "rating": 7.6,
+      "release": 2014,
+      "director": "Baldvin Zophaniasson"
+    },
+  "19":{
+      "title": "Brudguminn",
+      "plot": "Jon, a middle-aged professor is going to get married tomorrow, for the second time, to one of his ex-students half his age. But it's not all roses. First, there's his cranky ...",
+      "image": "https://upload.wikimedia.org/wikipedia/is/e/ee/Brudguminn.jpg",
+      "trailer": "https://www.youtube.com/watch?v=c8wE3TLLjPU",
+      "classes": "comedy drama 2008 baltasar_kormakur",
+      "rating":6.7,
+      "release": 2008,
+      "director": "Baltasar Kormakur"
+    },
+  "20":{
+      "title": "Stormland",
+      "plot": "The tragicomic story of lone rebel Boddi Steingrimsson who lives in a small town in Northern Iceland. Boddi hates materialistic modern society in its entirety and on his blog-page he ...",
+      "image": "images/rokland.jpg",
+      "trailer": "https://www.youtube.com/watch?v=SrUvpFoMXrg",
+      "classes" :"comedy drama fantasy romance 2011 marteinn_thorsson",
+      "rating": 6.7,
+      "release": 2011,
+      "director": "Marteinn Thorsson"
+    },
+  "21":{
+      "title": "Reykjavik-Rotterdam",
+      "plot": "Financial concerns tempt a security guard to return to his smuggling ways.",
+      "image": "https://upload.wikimedia.org/wikipedia/en/c/c0/Reykjavik-Rotterdam.jpg",
+      "trailer": "https://www.youtube.com/watch?v=30CxmO-wKCw",
+      "classes": "thriller 2008 oskar_jonasson",
+      "rating": 6.8,
+      "release": 2008,
+      "director": "Oskar Jonasson"
+    },
+  "22":{
+      "title": "Frost",
+      "plot": "A young couple, physiologist Agla and filmmaker Gunnar wake up at a glacier camp to find the camp mysteriously abandoned and their co-workers gone. When searching for the lost team they realize theyre up against an unknown deadly force.",
+      "image": "images/frost.jpg",
+      "trailer": "https://www.youtube.com/watch?v=i0BYGETCT0Y",
+      "classes": "action 2012 reynir_lyngdal",
+      "rating": 3.7,
+      "release": 2012,
+      "director":"Reynir Lyngdal"
+    },
+  "23":{
+      "title": "Reykjavik",
+      "plot": "A bittersweet romantic drama about a thirty-something Reykjavik couple heading in different directions.",
+      "image": "images/reykjavik.jpg",
+      "trailer": "https://www.youtube.com/watch?v=IS2YernjGwQ",
+      "classes": "drama comedy new 2016 asgrimur_sverrisson",
+      "rating": 7.5,
+      "release": 2016,
+      "director": "Asgrimur Sverrisson"
+    },
+  "24":{
+      "title": "Children",
+      "plot": "Karitas is a single mother of four who desperately tries to make ends meet. Fighting a losing battle with her ex-husband for custody over her three daughters, she's oblivious to what's ...",
+      "image": "https://upload.wikimedia.org/wikipedia/is/a/ab/Born_veggspjald.jpg",
+      "trailer": "https://www.youtube.com/watch?v=kMSjNHyZEqQ",
+      "classes": "drama 2006 ragnar_bragason",
+      "rating": 7.6,
+      "release": 2006,
+      "director": "Ragnar Bragaon"
+    },
+  "25":{
+      "title": "Remote Control",
+      "plot": "Since his mother wants to watch TV, Axel, a young auto-mechanic, must recover her remote control, accidentally taken by his punk sister Maja. During his quest, he becomes involved in the ...",
+      "image": "images/remote.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Wv3iZOELBzQ",
+      "classes": "comedy crime 1992 oskar_jonasson",
+      "rating": 7.9,
+      "release": 1992,
+      "director": "Oskar Jonasson"
+    },
+  "26":{
+      "title": "Fyrir framan annad folk",
+      "plot": "Hubert is an introvert that works in advertising who meets a girl whom he starts dating and like any relationship it has its ups and downs.",
+      "image": "images/framan.jpg",
+      "trailer": "https://www.youtube.com/watch?v=vJceaFUOUGM",
+      "classes": "comedy new 2016 oskar_jonasson",
+      "rating": 8.2,
+      "release": 2016,
+      "director": "Oskar Jonasson"
+    },
+  "27":{
+      "title": "Angels of the Universe",
+      "plot": "Pall is an artistic and sensitive young man. Getting dumped by his girlfriend, Dagny, triggers his descent into madness. We follow him on his way to inevitable doom; at home with his ...",
+      "image": "https://upload.wikimedia.org/wikipedia/en/5/57/Angelsoftheuniverse.jpg",
+      "trailer": "https://www.youtube.com/watch?v=vM0dpaNoBkI",
+      "classes": "biography drama fridrik_thor_fridriksson",
+      "rating": 7.8,
+      "release" : 2000,
+      "director": "Fridrik Thor Fridriksson"
+    },
+  "28":{
+      "title": "Paris of the North",
+      "plot": "Hugi is a teacher in a small and remote village in the east of iceland (population 169). He is quite content by himself among the mountains, which surround the quite village where hardly ...",
+      "image": "images/paris.jpg",
+      "trailer": "https://www.youtube.com/watch?v=tbkiGUbSgDw",
+      "classes": "comedy drama 2000 hafsteinn_gunnar_sigurdsson",
+      "rating": 6.6,
+      "release": 2014,
+      "director" : "Hafsteinn Gunnar Sigurdsson"
+    },
+  "29":{
+      "title": "XL",
+      "plot": "Leifur Sigurdarson, an unstoppable ladies man and alcoholic parliament member, is forced in rehab by his friend and boss, the Prime Minister of Iceland. But before he gets spanked in public...",
+      "image": "images/xl.jpg",
+      "trailer": "https://www.youtube.com/watch?v=JvQpg7k7g_M",
+      "classes": "drama 2013 marteinn_thorsson",
+      "rating": 5.9,
+      "release": 2013,
+      "director": "Marteinn Thorsson"
+    },
+  "30":{
+      "title": "Eleven men out",
+      "plot": "The star player of Icelands top football team causes a stir when he admits to being gay to his team mates and then goes on a journey to discover himself (with the help of the local press). ...",
+      "image": "images/eleven.jpg",
+      "trailer" : "https://www.youtube.com/watch?v=INA7nwEe_qY",
+      "classes": "comedy drama romance sport 2005 robert_douglas",
+      "rating" :5.1,
+      "release": 2005,
+      "director": "Robert Douglas"
+    },
+  "31":{
+      "title": "Devil's Island",
+      "plot": "The story of families living in barracks, left by the US Army in Reykjavik at the conclusion of World War II.",
+      "image": "images/devil.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Md0usC4Ww68",
+      "classes": "drama comedy 1996 fridrik_thor_fridriksson",
+      "rating": 7.3,
+      "release": 1996,
+      "director": "Fridrik Thor Fridriksson"
+    },
+  "32":{
+      "title": "The Homecoming",
+      "plot": "Gunnar is a sociologist in his fifties who has written countless self-help books. He lives in a beautiful house that is way too big for him and Disa, his wife of thirty years. Their ...",
+      "image": "images/blodberg.jpg",
+      "trailer": "https://www.youtube.com/watch?v=hyP-j9zoF0k",
+      "classes": "drama 2015 bjorn_hlynur_haraldsson",
+      "rating": 6.7,
+      "release": 2015,
+      "director": "Bjorn Hlynur Haraldsson"
+    },
+  "33":{
+      "title": "City State",
+      "plot": "Set in modern day Iceland, an immigrant vows revenge after losing his unborn child in an attack by a crime syndicate, thereby binding his fate with a troubled policewoman, her corrupt police commander, and a crime lord who's losing his edge.",
+      "image": "https://upload.wikimedia.org/wikipedia/is/thumb/4/44/Borgrikiplakat.jpg/406px-Borgrikiplakat.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Nz10eee9rRI",
+      "classes": "action drama thriller 2011 olaf_johannesson",
+      "rating": 5.8,
+      "release": 2011,
+      "director": "Olaf Johannesson"
+    },
+  "34":{
+      "title": "Polite People",
+      "plot": "A desperate city-slicker engineer cheats his way into a small farming community, pretending to know how to save them by refinancing their slaughterhouse not knowing that he's walking into a...",
+      "image": "images/polite.jpg",
+      "trailer": "https://www.youtube.com/watch?v=S2KrDrANs_M",
+      "classes": "drama comedy 2011 olaf_johannesson",
+      "rating": 5.8,
+      "release": 2011,
+      "director": "Olaf Johannesson"
+    },
+  "35":{
+      "title": "King's Road",
+      "plot": "After 3 years abroad Junior returns to Iceland with his set of problems hoping that his father can sort them out but his homecoming isn't quite what he had expected.",
+      "image": "images/king.jpg",
+      "trailer": "https://www.youtube.com/watch?v=0E553nTriug",
+      "classes": "drama comedy 2010 valdis_oskarsdottir",
+      "rating": 5.8,
+      "release": 2010,
+      "director": "Valdis Oskarsdottir"
+    },
+  "36":{
+      "title": "Summerland",
+      "plot": "An art-house comedy about an ordinary family running the unusual business of elf tourism and spiritual sessions. Their house is built around an elf stone, which is sacred to the wife Lara, ... ",
+      "image": "images/summer.jpg",
+      "trailer": "https://www.youtube.com/watch?v=62jfqf5H87I",
+      "classes": "comed fantasy 2010 grimur_hakonarson",
+      "rating": 6.4,
+      "release": 2010,
+      "director": "Grimur Hakonarson"
+    },
+  "37":{
+      "title": "Undercurrent",
+      "plot": "The crew on board the fishing vessel Undercurrent RE 29 has become uncomfortably numb with its never ending routine of week long tours at sea. Then, during one dark and dreary night this ... ",
+      "image": "images/brim.jpg",
+      "trailer": "https://www.youtube.com/watch?v=uTPRRzRfTHs",
+      "classes": "drama 2010 arni_asgeirsson",
+      "rating": 6.4,
+      "release": 2010,
+      "director": "Arni Asgeirsson"
+    },
+  "38":{
+      "title": "Cold Light",
+      "plot": "What could be better than knowing your future? And what could be worse? A love-filled childhood abruptly ends when catastrophe descends. One that the child had foreseen yet failed to act upon.",
+      "image": "https://upload.wikimedia.org/wikipedia/is/thumb/5/5a/Kaldaljos_VHS.jpg/384px-Kaldaljos_VHS.jpg",
+      "trailer": "https://www.youtube.com/watch?v=g0DqUtDbQ5c",
+      "classes": "drama 2004 hilmar_oddsson",
+      "rating": 6.7,
+      "release": 2004,
+      "director": "Hilmar Oddsson"
+    },
+  "39":{"title": "The White Viking",
+        "plot": "Norway in the 10th century. Askur, son of the powerful Thorgeir marries Embla, daughter of one of the few remaining landowners in Norway, in a pagan ceremony. King Olav, a ruthless ...",
+        "image": "https://upload.wikimedia.org/wikipedia/is/thumb/d/dd/Hviti_vikingurinn_VHS.jpg/377px-Hviti_vikingurinn_VHS.jpg",
+        "trailer": "https://www.youtube.com/watch?v=yWB8ZP2RmR8",
+        "classes": "adventure drama 1991 hrafn_gunnlaugsson",
+        "rating": 6.2,
+        "release": 1991,
+        "director": "Hrafn Gunnlaugsson"
+    },
+  "40":{
+      "title": "Reverse",
+      "plot": "Two childhood friends decide to drive around Iceland in reverse. Soon after their trip starts they find out that this was perhaps not the best idea in the world. Nothing goes as planned and almost everything goes wrong.",
+      "image": "images/reverse.jpg",
+      "trailer": "https://youtu.be/0E553nTriug",
+      "classes": "comedy new 2015 david_oskar_olafsson",
+      "rating": 7.0,
+      "release": 2015,
+      "director": "David Oskar Olafsson"
+    },
+  "41":{
+      "title": "Webcam",
+      "plot": "A college student begins working as a cam girl, with support from her best friend.",
+      "image": "images/webcam.jpg",
+      "trailer": "https://www.youtube.com/watch?v=U5iH86HrvuU",
+      "classes": "drama comedy new 2015 sigurdur_anton",
+      "rating": 8.0,
+      "release": 2015,
+      "director": "Sigurdur Anton"
+    },
+  "42":{
+      "title": "Mamma Goggo",
+      "plot": "A film director's personal journey experiencing his mother's disappearance into the Alzheimer disease, a film with essential Fridriksson's ingredients, humour, compassion and strong visual style.",
+      "image": "images/gogo.jpg",
+      "trailer": "https://www.youtube.com/watch?v=316HhqFJe_E",
+      "classes": "drama 2010 fridrik_thor_fridriksson",
+      "rating": 6.6,
+      "release": 2010,
+      "director": "Fridrik Thor Fridriksson"
+    },
+  "43":{
+      "title": "Mr. Bjarnfredarson",
+      "plot": "Georg tries to get his life back on track after a five year stint in jail.",
+      "image": "images/bjarnfredarson.jpg",
+      "trailer": "https://www.youtube.com/watch?v=fL7f_qzIdoA",
+      "classes": "comedy 2009 ragnar_bragason",
+      "rating": 7.3,
+      "release": 2009,
+      "director": "Ragnar Bragason"
+    },
+  "44":{
+      "title": "Shadow of the Raven",
+      "plot": "Trausti returns to Iceland just in time to be entangled in a family feud over a stranded whale-cadaver. His mother (the family head) is mortally wounded and Grim kills Erikur; the other ...",
+      "image": "images/shadow.jpg",
+      "trailer": "https://youtu.be/0E553nTriug",
+      "classes": "drama 1988 hrafn_gunnlaugsson",
+      "rating": 6.4,
+      "release": 1988,
+      "director": "Hrafn Gunnlaugsson"
+    },
+  "45":{
+      "title": "The Icelandic Dream",
+      "plot": "A business man and weekend dad is getting worn down by family trouble, business failure and the continuous loss of his favourite football team.",
+      "image": "images/icelandic_dream.jpg",
+      "trailer": "https://www.youtube.com/watch?v=D1HGyYDp0uk",
+      "classes": "comedy sport 2000 robert_douglas",
+      "rating": 7.1,
+      "release": 2000,
+      "director": "Robert Douglas"
+    },
+  "46":{
+      "title": "Brave Men's Blood",
+      "plot": "In order to take down a major criminal organization, the ambitious head of the internal affairs unit of the Reykjavik P.D. decides to investigate a corrupt police lieutenant. Tipped off ...",
+      "image": "images/brave.jpg",
+      "trailer": "https://www.youtube.com/watch?v=0JpmZM2fi3w",
+      "classes": "action 2014 olaf_johannesson",
+      "rating": 6.3,
+      "release": 2014,
+      "director": "Olaf Johannesson"
+    },
+  "47":{
+      "title": "Dorks and Damsels",
+      "plot": "When Hildur - a beautiful high society girl and a regular guest in the national celebrity press - finds out that her boyfriend Jolli is about to go into jail, she realizes she has to learn ...",
+      "image": "images/dorks.jpg",
+      "trailer": "https://www.youtube.com/watch?v=g6K3ykcRzKE",
+      "classes": "comedy fantasy 2007 gunnar_gudmundsson",
+      "rating": 6.5,
+      "release": 2007,
+      "director": "Gunnar Gudmundsson"
+    },
+  "48":{
+      "title": "Falskur Fugl",
+      "plot": "Arnaldur, a 16-year-old boy living a normal teenager's life in Reykjavik. One day, coming home from school, he finds his brother in the bathtub, dead. Despite clear signs of a suicide, ...",
+      "image": "images/falskur.jpg",
+      "trailer": "https://www.youtube.com/watch?v=FR87GCI04RY",
+      "classes": "drama 2013 thoromar_jonsson",
+      "rating": 6.2,
+      "release": 2013,
+      "director": "Thoromar Jonsson"
+    },
+  "49":{
+      "title": "Skytturnar",
+      "plot": "Two friends, who are experienced whale hunters, decide to settle down in Rekyavik at the end of the whaling season. During a night on the town, the duo lands in a heap of trouble after they...",
+      "image": "images/skytturnar.jpg",
+      "trailer": "https://www.youtube.com/watch?v=XNbvcEAXNM4",
+      "classes": "drama 1987 fridrik_thor_fridriksson",
+      "rating": 6.2,
+      "release": 1987,
+      "director": "Fridrik Thor Fridriksson"
+    },
+  "50":{
+      "title": "Grafir og Bein",
+      "plot": "Husband and wife, Gunnar and Sonja go to a remote house in the Icelandic country side. Shortly after their arrival strange things start to happen that might jeopardize their marriage as well as their lives.",
+      "image": "images/grafir.jpg",
+      "trailer": "https://www.youtube.com/watch?v=1t3H_QcDBTE",
+      "classes": "drama horror history new 2016 anton_sigurdsson",
+      "rating": 5.4,
+      "release": 2016,
+      "director": "Anton Sigurdsson"
+    },
+  "51":{
+      "title": "The Seagull's Laughter",
+      "plot": "Post-war provincial Iceland: around 1950, Freyja, who'd been a plump teen, returns from America, a widow with a 20-inch waist...",
+      "image": "images/mavahlatur.jpg",
+      "trailer": "https://www.youtube.com/watch?v=qKTlApN6UIU",
+      "classes": "comedy drama 2001 agust_gudmundsson",
+      "rating": 6.9,
+      "release": 2001,
+      "director": "Agust Gudmundsson"
+    },
+  "52":{
+      "title": "Stella on Holiday",
+      "plot": "When a husband get's bad hurt on hands and other parts of the body his wife Stella is forced to go for him to catch salmon near a cottage with a friend who is Swedish so the husband doesn't...",
+      "image": "images/stella.jpg",
+      "trailer": "https://www.youtube.com/watch?v=-LJggfEDbBw",
+      "classes": "comedy family 1986 thorhildur_thorleifsdottir",
+      "rating": 7.2,
+      "release": 1986,
+      "director": "Thorhildur Thorleifsdottir"
+    },
+  "53":{
+      "title": "Country Wedding",
+      "plot": "A couple decide to get married in a church out in the country. It is 1 hour drive from Reykjavik but things do not go as planed.",
+      "image": "images/country.jpg",
+      "trailer": "https://www.youtube.com/watch?v=62Ub6p6uUho",
+      "classes": "comedy 2008 valdis_oskarsdottir",
+      "rating": 6.5,
+      "release": 2008,
+      "director": "Valdis Oskarsdottir"
+    },
+  "54":{           
+      "title": "Whitchcraft",
+      "plot": "The young and fanatical Jon is appointed pastor to a remote church in 17th century Iceland. As is custom, he marries the widow of his predecessor, a woman much older than he is. He is ...",
+      "image": "images/whitchcraft.jpg",
+      "trailer": "https://www.youtube.com/watch?v=SSO-8E8VQ8Y",
+      "classes": "drama 1991 hrafn_gunnlaugsson",
+      "rating": 5.4,
+      "release": 1991,
+      "director": "Hrafn Gunnlaugsson"
+    },
+  "55":{
+      "title": "Agnes",
+      "plot": "Agnes, the beautiful housekeeper of the sheriff of a small Icelandic county sees a chance to get herself and her young daughter away from her brutal employer when she falls in love with the...",
+      "image": "http://www.kvikmyndavefurinn.is/axmedia/poster/agnes_poster.jpg",
+      "trailer": "https://www.youtube.com/watch?v=PEQu5OxKWAc",
+      "classes": "drama history romance 1995 egill_edvardsson",
+      "rating": 6.9,
+      "release": 1995,
+      "director": "Egill Edvarsson"
+    },
+    "56":{
+      "title": "Hin helgu ve",
+      "plot": "On a small island in the west of Island, Gestur, only seven years old, falls in love with 20 years old Helga. When she introduces him her fiancee one day, he decides to fight the competitor...",
+      "image": "images/hinhelguve.jpg",
+      "trailer": "https://www.youtube.com/watch?v=h2PWnKTAKpY",
+      "classes": "drama 1993 hrafn_gunnlaugsson",
+      "rating": 6.1,
+      "release": 1993,
+      "director": "Hrafn Gunnlaugsson"
+    }
+}

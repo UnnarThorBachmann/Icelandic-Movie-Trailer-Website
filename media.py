@@ -1,7 +1,7 @@
 import webbrowser
 
-""" This file was mostly written in class: Programmings Foundations for Python. However it was modified by Unnar Thor Bachmann to add further information for
-    each movie.
+""" This file was mostly written in class: Programmings Foundations for Python. However it was modified by
+    Unnar Thor Bachmann to add further information for each movie.
 """
 class Movie():
     """ Summary: A movie class which contains all the information displayed on the website.
@@ -16,7 +16,15 @@ class Movie():
         director: The director of the movie.
     """
     
-    def __init__(self, movie_title, movie_storyline, poster_image, trailer_youtube, movie_category,movie_rating,movie_year,movie_director):
+    def __init__(self,
+                 movie_title,
+                 movie_storyline,
+                 poster_image,
+                 trailer_youtube,
+                 movie_category,
+                 movie_rating,
+                 movie_year,
+                 movie_director):
         """ The constructor of the class """
         self.title = movie_title
         self.storyline = movie_storyline
